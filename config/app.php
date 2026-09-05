@@ -123,4 +123,19 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Seeded Admin Account
+    |--------------------------------------------------------------------------
+    |
+    | Used by DatabaseSeeder to create/update the super_admin user. Set these
+    | in the environment's .env before seeding production — the defaults
+    | here are for local development only.
+    |
+    */
+
+    'admin_email' => env('ADMIN_EMAIL', 'admin@sarengroup.test'),
+
+    'admin_password' => env('ADMIN_PASSWORD', 'password'),
+
 ];

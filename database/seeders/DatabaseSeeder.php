@@ -15,18 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
         $this->call(ShieldSeeder::class);
 
         $admin = User::updateOrCreate(
-            ['email' => 'admin@sarengroup.test'],
+            ['email' => config('app.admin_email')],
             [
                 'name' => 'Admin Saren Grup',
-                'password' => bcrypt('password'),
+                'password' => bcrypt(config('app.admin_password')),
                 'email_verified_at' => now(),
             ],
         );
