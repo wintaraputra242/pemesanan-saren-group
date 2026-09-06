@@ -14,16 +14,7 @@ class ProductPolicy
 
     public function viewAny(AuthUser $authUser): bool
     {
-        $result = $authUser->can('ViewAny:Product');
-
-        \Illuminate\Support\Facades\Log::info('DEBUG ProductPolicy::viewAny', [
-            'user_id' => $authUser->id,
-            'email' => $authUser->email,
-            'roles' => $authUser->getRoleNames(),
-            'result' => $result,
-        ]);
-
-        return $result;
+        return $authUser->can('ViewAny:Product');
     }
 
     public function view(AuthUser $authUser, Product $product): bool
