@@ -14,6 +14,7 @@ git pull origin main
 
 echo "==> Installing PHP dependencies"
 composer install --no-dev --optimize-autoloader --no-interaction
+php artisan livewire:publish --assets --force
 
 echo "==> Frontend assets are NOT built here."
 echo "  If resources/css or resources/js changed, run from your local machine:"
